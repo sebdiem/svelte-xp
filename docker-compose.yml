@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  reverse-proxy:
+    image: nginx:alpine
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./nginx-dev-sites.conf:/etc/nginx/conf.d/dev-sites.conf:ro
+  back:
+    build: ./django
+    ports:
+      - "8001:8001"
+    volumes:
+      - type: bind
+        source: ./django
+        target: /var/app
+  front:
+    build: ./my-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./my-app/src
+        target: /var/app/src
+      - type: bind
+        source: ./my-app/svelte.config.js
+        target: /var/app/svelte.config.js
+      - type: bind
+        source: ./my-app/tsconfig.json
+        target: /var/app/tsconfig.json
+      - type: bind
+        source: ./my-app/static
+        target: /var/app/static

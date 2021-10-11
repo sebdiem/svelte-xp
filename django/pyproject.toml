@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mydjango"
+version = "0.1.0"
+description = ""
+authors = ["Sébastien Diemer <sdiemer@mytraffic.fr>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.8"
+django-cors-headers = "^3.10.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

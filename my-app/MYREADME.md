@@ -1,0 +1,2 @@
+- Implémenter une page d'authentification avec svelte + django
+- Implémenter une liste de todos

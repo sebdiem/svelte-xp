@@ -1,0 +1,12 @@
+.DS_Store
+my-app/node_modules
+my-app/build
+my-app/.svelte-kit
+my-app/package
+
+__pycache__/
+.mypy_cache/
+*.mo
+*.py[cod]
+*.egg
+*.egg-info
